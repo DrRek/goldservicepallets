@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/cornopallets-pallet-in-legno.png">
-	<link rel="icon" type="image/png" href="assets/img/cornopallets-pallet-in-legno.png">	
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">	
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Gold Service</title>
+	<title>Get Shit Done Kit by Creative Tim</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -17,6 +17,7 @@
     
     <!--     Font Awesome     -->
     <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="navbar-full">
@@ -32,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="https://goldservicepallets.it">
+                <a href="https://www.goldservicepallets.com/">
                      <div class="logo-container">
                         <div class="logo">
                             <img src="assets/img/palletsico.jpg">
@@ -43,14 +44,13 @@
                     </div>
                 </a>
             </div>
-
+        
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Home</a></li>
                     
-                    <li><a href="#contatti" class="btn btn-round btn-default" id="header-contact-us">Contatti</a></li>
-                    <li><a href="#" onclick="toggleLanguage()">IT | EN</a></li>
+                    <li><a href="#contatti" class="btn btn-round btn-default">Contatti</a></li>
                </ul>
               
             </div><!-- /.navbar-collapse -->
@@ -80,10 +80,10 @@
                   </div>
               </div>
               <div class="col-md-5 col-sm-12">
-                              <p id="intro">
+                              <p>
                               Gold Service dal 2014 offre servizi di vendita di <b>bancali</b> e <b>pallets</b> usati, ma anche nuovi.
                               </p>
-                              <p id="intro2">
+                              <p>
                               <a href="#contatti">Contattaci</a> per informazioni e prezzi.
                               </p>
 
@@ -100,12 +100,12 @@
 <!-- end main -->
 
 <div class="parallax-pro">
-    <div class="img-src" style="background-image: url('assets/img/bg6.jpg');"></div>
+    <div class="img-src" style="background-image: url('http://get-shit-done-pro.herokuapp.com/assets/img/bg6.jpg');"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-md-12 text-center">
                 <h1 class="hello text-center">
-                   <h2 id="contatti" style="color: white;">Contatti</h2>
+                   <a href="http://gsdk.creative-tim.com" id="contatti">Contatti</a>
                    <small>
                     <ul class="list-unstyled">
                       <li>goldservice23@gmail.com</li>
@@ -114,7 +114,7 @@
                     </small>
                 </h1>
                  <div class="actions">
-                     <a class="btn btn-lg btn-warning btn-fill" href="mailto:goldservice23@gmail.com" id="contattaci-button">contattaci</a>
+                     <a class="btn btn-lg btn-warning btn-fill" href="http://gsdk.creative-tim.com/?ref=get-shit-done">Live Preview Kit</a>
                 </div>
             </div>
         </div>
@@ -173,43 +173,7 @@
 	$('.carousel').carousel({
       interval: 4000
     });
-</script>
-
-<script>
-    var language; 
-    function getLanguage() {
-        (localStorage.getItem('language') == null) ? setLanguage('it') : false;
-        $.ajax({ 
-            url:  '/language/' +  localStorage.getItem('language') + '.json', 
-            dataType: 'json', async: false, dataType: 'json', 
-            success: function (lang) { language = lang } 
-        });
-    }
+      
     
-    function setLanguage(lang) {
-        localStorage.setItem('language', lang);
-    }
-
-    function toggleLanguage(){
-        new_lang = (localStorage.getItem('language') == null || localStorage.getItem('language') == 'en') ? 'it' : 'en'
-        console.log("Setting lang: " + new_lang);
-        localStorage.setItem('language', new_lang);
-        updateStrings()
-    }
-
-    function updateStrings(){
-        getLanguage()
-        $('#header-contact-us').text(language.contatti);
-        $('#intro').html(language.intro);
-        $('#intro2').html(language.intro2);
-        $('#contattaci-button').text(language.contattaci_button);
-        $('#contatti').text(language.contatti);
-    }
-
-    $(document).ready(function(){
-        updateStrings()
-    });
-
 </script>
-    
 </html>
